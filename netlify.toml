@@ -1,6 +1,0 @@
-[[redirects]]
-  query = { x-makeswift-preview-mode = ":secret" }
-  from = "/*"
-  to = "/api/makeswift/proxy-preview-mode?secret=:secret"
-  status = 200
-  force = true

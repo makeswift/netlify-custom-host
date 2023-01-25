@@ -17,17 +17,7 @@ type ParsedUrlQuery = { path?: string[] }
 export async function getStaticPaths(): Promise<
   GetStaticPathsResult<ParsedUrlQuery>
 > {
-  const makeswift = new Makeswift(process.env.MAKESWIFT_SITE_API_KEY!)
-  const pages = await makeswift.getPages()
-
-  return {
-    paths: pages.map((page) => ({
-      params: {
-        path: page.path.split('/').filter((segment) => segment !== ''),
-      },
-    })),
-    fallback: 'blocking',
-  }
+  return { paths: [], fallback: 'blocking' }
 }
 
 type Props = MakeswiftPageProps
